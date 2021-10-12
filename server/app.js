@@ -5,11 +5,19 @@ const morgan = require('morgan');
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: true,
+    credentials: true,
+  })
+);
 app.use(morgan('tiny'));
 
 app.use((req, res, next) => {
   res.send('hi');
 });
 
-app.listen(8080);
+const port = 80;
+app.listen(port, () => {
+  console.log(`서버가 ${port}번에서 작동중입니다.`);
+});
