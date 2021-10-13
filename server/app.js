@@ -13,6 +13,10 @@ app.use(
 );
 app.use(morgan('tiny'));
 
+app.get('/a', (req, res, next) => {
+  res.status(200).send('get/a');
+});
+
 app.use((req, res, next) => {
   res.send('hi');
 });
