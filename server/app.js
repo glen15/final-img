@@ -21,7 +21,7 @@ app.use((req, res, next) => {
   res.send('hi');
 });
 
-const port = 80;
+const port = 8080;
 app.listen(port, () => {
   console.log(`서버가 ${port}번에서 작동중입니다.`);
 });
